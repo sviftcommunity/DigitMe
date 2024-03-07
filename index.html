@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DigitMe</title>
+    <script src="/main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $('input[type="textarea"]').each(function (index) {
+        var elem = $(this);
+        elem.replaceWith(
+          $("<textarea/>").attr("name", elem.attr("name")).val(elem.val())
+        );
+      });
+    </script>
+    <style>
+      @media (min-width: 400px) {
+        .btn-img {
+          width: 37px;
+        }
+        .btnn {
+          font-size: 70px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container text-center my-s" style="margin-top: 5%;">
+      <h1 class="h1-center">DigitMe</h1>
+      <h3 class="title">Перетащите или выберите файл:</h3>
+      <form>
+        <label for="images" id="dropcontainer">
+         <input type="file" name="img" accept="image/*" required />
+         <input class="send-btn" type="submit"></input>
+       </label>
+     </form>
+      <div style="margin-top: 5%">
+        <p class="gap-1 my-s">
+          <button 
+            class="btn-show"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+            style="
+              width: 500px;
+              height: 70px;
+              font-size: 30px;
+              text-align: center;
+            "
+          >
+            <img src="/resource/see.png" class="btn-img" />
+            Показать результат
+          </button>
+        </p>
+        <div
+          class="collapse"
+          id="collapseExample"
+          style="width: flex; font-size: 40px; margin-bottom: 30%"
+        >
+          <div class="card card-body">
+            <textarea
+              class="textarea"
+              name="Gen"
+              cols="40"
+              rows="5"
+              id="result"
+            >
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quos id, dolor assumenda illo earum sunt tenetur corporis eveniet modi molestiae nam asperiores. Aspernatur ea cupiditate minus sunt ipsa magni.
+            </textarea>
+            <div class tooltip>
+              <button
+                style="width: 400px; font-size: 30px"
+                class="btn btn-primary copy-btn"
+                onclick="textcopy()"
+              >
+                <img src="resource/copy.png" width="25px" /> Копировать текст
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p style="text-align: center; font-size: 40px; color: white">
+        © DigitMe 2024
+      </p>
+      <a class="tg" href="https://t.me/stepansvift">
+        <p class="tg">
+          <img src="/resource/telegram.png" width="30px" /> Обратная связь
+        </p>
+      </a>
+    </div>
+  </body>
+</html>

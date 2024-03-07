@@ -1,0 +1,13 @@
+[Unit]
+# After=network.service
+Description=DigitMe Telegram
+
+[Service]
+Type=simple
+# WorkingDirectory=/root/bot
+ExecStart=/root/bot/digitme.sh
+# User=do-user
+
+[Install]
+WantedBy=multi-user.target
+# WantedBy=default.target
